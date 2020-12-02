@@ -27,24 +27,7 @@ export default {
 
     array.sort((a, b) => a - b);
     let loops = 1;
-    let i = 0;
-    while (i < array.length) {
-      let halfI = Math.floor(array.length - 1 / 2);
-      let direction = sum3I(i, i + 1, halfI) < 2020 ? 1 : -1;
-      while (i < halfI - 1 && i < halfI - 1) {
-        const currentSum = sum3I(i, i + 1, halfI);
-        loops++;
-        if (currentSum === 2020) {
-          return result(array[i], array[i + 1], loops, array[halfI]);
-        } else if (currentSum < 2020 && direction < 0) {
-          i++;
-        } else if (currentSum > 2020 && direction === 1) {
-          i++;
-        } else {
-          halfI += direction;
-        }
-      }
-    }
+    let num1 = array.shift();
 
     return "still a mystery.";
   },
