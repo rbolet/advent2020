@@ -27,7 +27,17 @@ export default {
 
     array.sort((a, b) => a - b);
     let loops = 1;
-    let num1 = array.shift();
+
+    for (let a = 0; a < array.length - 2; a++) {
+      for (let b = a + 1; b < array.length - 1; b++) {
+        for (let c = b + 1; c < array.length; c++) {
+          if (array[a] + array[b] + array[c] === 2020) {
+            return result(array[a], array[b], loops, array[c]);
+          }
+          loops++;
+        }
+      }
+    }
 
     return "still a mystery.";
   },
